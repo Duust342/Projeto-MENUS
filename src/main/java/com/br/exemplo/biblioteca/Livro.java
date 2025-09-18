@@ -29,6 +29,9 @@ public class Livro{
     public int getdataLancamento(){
         return dataLancamento;
     }
+    public boolean isDisponivel(){
+        return disponivel;
+    }
                 //setters
     
     public void setId (Long id){
@@ -40,7 +43,7 @@ public class Livro{
     public void setAutor(String autor){
         this.autor = autor;
     }
-    public boolean setDisponivel(){
+    public boolean setDisponivel(boolean disponivel){
         return disponivel;
     }
     public void setDataLancamento (int dataLancamento){
@@ -50,11 +53,11 @@ public class Livro{
     @Override
     public String toString(){
         return "Livro{" +
-        "id = " + id +
-        "titulo = " + titulo +
-        "autor = " + autor + 
-        "data de lançamento = " + dataLancamento +
-        "disponivel = " + disponivel +
+        " id = " + id +
+        " | titulo = " + titulo +
+        " | autor = " + autor +
+        " | data de lançamento = " + dataLancamento +
+        " | disponivel = " + disponivel +
         "}";
     }
     }

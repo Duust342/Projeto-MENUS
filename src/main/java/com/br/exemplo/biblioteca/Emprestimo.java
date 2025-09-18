@@ -1,7 +1,7 @@
 package com.br.exemplo.biblioteca;
 import java.time.LocalDate;
 public class Emprestimo{
-    private Membro nomeAluno;
+    private String nomeAluno;
     private Livro nomeLivro;
     private LocalDate dataEmprestimo;
     private LocalDate dataDevolucao;
@@ -9,18 +9,18 @@ public class Emprestimo{
 
     //constructor
 
-    public Emprestimo(Membro nomeAluno, Livro nomeLivro, LocalDate dataEmprestimo, LocalDate dataDevolucao){
+    public Emprestimo(String nomeAluno, Livro nomeLivro, LocalDate dataEmprestimo, LocalDate dataDevolucao){
         this.nomeAluno = nomeAluno;
         this.nomeLivro = nomeLivro;
         this.dataEmprestimo = dataEmprestimo;
         this.dataDevolucao = dataDevolucao;
-        this.nomeLivro.setDisponivel();
-        this.situacaoDeEntrega = null;
+        this.nomeLivro.setDisponivel(false);
+        this.situacaoDeEntrega = situacaoDeEntrega;
     }
 
     //getters
 
-    public Membro getnomeAluno(){
+    public String getnomeAluno(){
         return nomeAluno;
     }
     public Livro getnomeLivro(){
@@ -38,7 +38,7 @@ public class Emprestimo{
 
     //setters
 
-    public void setAluno(Membro nomeAluno){
+    public void setAluno(String nomeAluno){
         this.nomeAluno = nomeAluno;
     }
     public void setLivro(Livro nomeLivro){
@@ -53,17 +53,17 @@ public class Emprestimo{
     public void setsituacaoDeEntrega(LocalDate situacaoDeEntrega){
         this.situacaoDeEntrega = situacaoDeEntrega;
         if(situacaoDeEntrega != null){
-            this.nomeLivro.setDisponivel();
+            this.nomeLivro.setDisponivel(false);
         }
     }
     //MENU
     @Override
     public String toString(){
         return "Emprestimo{" +
-        "Nome do Aluno: " + nomeAluno +
-        "Nome do Livro: " + nomeLivro +
-        "Data do Emprestimo: " + dataEmprestimo + 
-        "Data de Devolucao: " + dataDevolucao +
-        "Situacao: " + situacaoDeEntrega;
+        " Nome do Aluno: " + nomeAluno +
+        " | Nome do Livro: " + nomeLivro +
+        " | Data do Emprestimo: " + dataEmprestimo +
+        " | Data de Devolucao: " + dataDevolucao +
+        " | Situacao: " + situacaoDeEntrega;
     }
 }

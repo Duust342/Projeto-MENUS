@@ -42,7 +42,7 @@ public void setCPF(String cpf){
 public String toString(){
     return "Membro{" +
     "id: " + id + 
-    "nome: " + nome +
-    "cpf: " + cpf;
+    " | nome: " + nome +
+    " | cpf: " + cpf;
 }
 }
